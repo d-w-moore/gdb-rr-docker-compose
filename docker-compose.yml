@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  myhost:
+    security_opt:
+      - seccomp:unconfined
+    cap_add:
+      - SYS_PTRACE
+    privileged: true
+#   image: ubuntu:18.04
+    build:
+      context: .
+    command: tail -f /dev/null
